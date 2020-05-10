@@ -8,8 +8,11 @@ The module challenge is the afternoon project or assignment that students work t
 
 ## Objectives
 
-- Explain function scope
-- Describe what closure is, how closure is created in a program and why it is important to understand closures in JavaScript  
+Explain function scope
+
+  - Scope is the objects the function has access to. Locally scoped objects are only available inside of the function. Globally scoped is available to all.
+
+Describe what closure is, how closure is created in a program and why it is important to understand closures in JavaScript.
 
 ## Introduction
 
@@ -42,6 +45,8 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+  - Closure are functions with preserved data. If you create a function within a function the inner function will have access to the outer functions scope.
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -64,7 +69,7 @@ dansRoll();
 
 a. Where is closure used in this code? How can you tell?
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
-c. What is the lexical scope of `newRoll`? 
+c. What is the lexical scope of `newRoll`? - local
 
 ### Task 3 - Stretch Goals
 

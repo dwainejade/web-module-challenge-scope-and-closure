@@ -27,21 +27,22 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
+ *  - counter1 has count ni local scope. counter2 count is in global scope.
  * 
  * 2. Which of the two uses a closure? How can you tell?
+ *  - counter1 uses closure because its inside the function.
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ *  
 */
 
 // counter1 code
 function counterMaker() {
   let count = 0;
   return function counter() {
-   return count++;
+    return count++;
   }
 }
-
 const counter1 = counterMaker();
 
 // counter2 code
@@ -56,11 +57,7 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
-
-    /*Code Here*/
-
-}
+const inning = () => Math.floor(Math.random() * 3);
 
 /* Task 3: finalScore()
 
@@ -74,14 +71,30 @@ finalScore(inning, 9) might return:
   "Away": 5,
 }
 
-*/ 
+*/
+let homeArr = [];
+let awayArr = [];
+let score = {};
 
-function finalScore(/*code Here*/){
-
-  /*Code Here*/
-
+function finalScore(inning, number) {
+  let home = 0;
+  let away = 0;
+  for (let i = 0; i < number; i++) {
+    //home and away scores pushed into seperate arrays
+    home += inning();
+    homeArr.push(home);
+    score['Home'] = home;
+    away += inning();
+    awayArr.push(away);
+    score['Away'] = away;
+  }
+  console.log(homeArr)
+  console.log(awayArr)
+  return {
+    home, away
+  }
 }
-
+console.log(finalScore(inning, 9))
 /* Task 4: 
 
 Create a function called `scoreboard` that accepts the following parameters: 
@@ -103,8 +116,12 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(inning, number) {
+  score['Inning'] = number;
+  
+  for (let i = 0; i < number; i++){
+    console.log(`${i+1}th inning: ${homeArr[i]} - ${awayArr[i]}`);
+  }
+  console.log(`Final Score: ${score.Home} - ${score.Away}`)
 }
-
-
+console.log(scoreboard(inning, 9))
