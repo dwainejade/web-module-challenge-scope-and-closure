@@ -8,11 +8,8 @@ The module challenge is the afternoon project or assignment that students work t
 
 ## Objectives
 
-Explain function scope
-
-  - Scope is the objects the function has access to. Locally scoped objects are only available inside of the function. Globally scoped is available to all.
-
-Describe what closure is, how closure is created in a program and why it is important to understand closures in JavaScript.
+- Explain function scope
+- Describe what closure is, how closure is created in a program and why it is important to understand closures in JavaScript.
 
 ## Introduction
 
@@ -67,9 +64,14 @@ dansRoll();
 dansRoll();
 ```
 
-a. Where is closure used in this code? How can you tell?
+a. Where is closure used in this code? How can you tell? 
+  - const newRoll. It's a variable thats accesed when the function is called.
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
-c. What is the lexical scope of `newRoll`? - local
+  - name stays the same. newRole is a random number.
+
+c. What is the lexical scope of `newRoll`? 
+  - Local to the function.
 
 ### Task 3 - Stretch Goals
 
@@ -107,6 +109,6 @@ addSix(21); // returns 27
 
 Follow these steps for completing your project.
 
-- [ ] Submit a pull request to merge <firstName-lastName> Branch into master (student's  Repo). **Please don't merge your own pull request**
-- [ ] Add your Team Lead as a reviewer on the pull request
+- [x] Submit a pull request to merge <firstName-lastName> Branch into master (student's  Repo). **Please don't merge your own pull request**
+- [x] Add your Team Lead as a reviewer on the pull request
 - [ ] Your Team Lead will count the project as complete by merging the branch back into master

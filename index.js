@@ -30,9 +30,10 @@ function processFirstItem(stringList, callback) {
  *  - counter1 has count ni local scope. counter2 count is in global scope.
  * 
  * 2. Which of the two uses a closure? How can you tell?
- *  - counter1 uses closure because its inside the function.
+ *  - counter1, because its inside the function.
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ *  - counter1 is prefferable when you dont want the count to be changed outside of the function. counter2 is useful when you want the count to be accessed by all functions. 
  *  
 */
 
@@ -84,12 +85,11 @@ function finalScore(inning, number) {
     home += inning();
     homeArr.push(home);
     score['Home'] = home;
+
     away += inning();
     awayArr.push(away);
     score['Away'] = away;
   }
-  console.log(homeArr)
-  console.log(awayArr)
   return {
     home, away
   }
@@ -124,4 +124,4 @@ function scoreboard(inning, number) {
   }
   console.log(`Final Score: ${score.Home} - ${score.Away}`)
 }
-console.log(scoreboard(inning, 9))
+scoreboard(inning, 9)
